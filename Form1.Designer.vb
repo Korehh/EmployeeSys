@@ -89,7 +89,9 @@ Partial Class Form1
         '
         'cmbgender
         '
+        Me.cmbgender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbgender.FormattingEnabled = True
+        Me.cmbgender.Items.AddRange(New Object() {"Female", "Male"})
         Me.cmbgender.Location = New System.Drawing.Point(42, 229)
         Me.cmbgender.Name = "cmbgender"
         Me.cmbgender.Size = New System.Drawing.Size(82, 21)
@@ -97,7 +99,9 @@ Partial Class Form1
         '
         'cmbposition
         '
+        Me.cmbposition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbposition.FormattingEnabled = True
+        Me.cmbposition.Items.AddRange(New Object() {"CEO", "Manager", "Co. Manager"})
         Me.cmbposition.Location = New System.Drawing.Point(293, 228)
         Me.cmbposition.Name = "cmbposition"
         Me.cmbposition.Size = New System.Drawing.Size(121, 21)
@@ -133,6 +137,7 @@ Partial Class Form1
         'txtcontact
         '
         Me.txtcontact.Location = New System.Drawing.Point(130, 229)
+        Me.txtcontact.MaxLength = 11
         Me.txtcontact.Name = "txtcontact"
         Me.txtcontact.Size = New System.Drawing.Size(157, 20)
         Me.txtcontact.TabIndex = 11
