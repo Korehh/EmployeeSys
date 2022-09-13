@@ -23,10 +23,10 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtempno = New System.Windows.Forms.TextBox()
         Me.txtlastname = New System.Windows.Forms.TextBox()
         Me.txtfirstname = New System.Windows.Forms.TextBox()
         Me.txtmi = New System.Windows.Forms.TextBox()
-        Me.txtaddress = New System.Windows.Forms.TextBox()
         Me.lv1 = New System.Windows.Forms.ListView()
         Me.cmbgender = New System.Windows.Forms.ComboBox()
         Me.cmbposition = New System.Windows.Forms.ComboBox()
@@ -38,7 +38,10 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.lblempno = New System.Windows.Forms.Label()
+        Me.cmdsave = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btndelete = New System.Windows.Forms.Button()
+        Me.txtaddress = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -50,36 +53,38 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Employee No:"
         '
+        'txtempno
+        '
+        Me.txtempno.Location = New System.Drawing.Point(118, 59)
+        Me.txtempno.Name = "txtempno"
+        Me.txtempno.Size = New System.Drawing.Size(73, 20)
+        Me.txtempno.TabIndex = 1
+        '
         'txtlastname
         '
-        Me.txtlastname.Location = New System.Drawing.Point(43, 117)
+        Me.txtlastname.Location = New System.Drawing.Point(41, 117)
         Me.txtlastname.Name = "txtlastname"
-        Me.txtlastname.Size = New System.Drawing.Size(143, 20)
-        Me.txtlastname.TabIndex = 1
+        Me.txtlastname.Size = New System.Drawing.Size(148, 20)
+        Me.txtlastname.TabIndex = 2
         '
         'txtfirstname
         '
-        Me.txtfirstname.Location = New System.Drawing.Point(190, 117)
+        Me.txtfirstname.Location = New System.Drawing.Point(195, 117)
         Me.txtfirstname.Name = "txtfirstname"
-        Me.txtfirstname.Size = New System.Drawing.Size(175, 20)
-        Me.txtfirstname.TabIndex = 2
+        Me.txtfirstname.Size = New System.Drawing.Size(190, 20)
+        Me.txtfirstname.TabIndex = 3
         '
         'txtmi
         '
-        Me.txtmi.Location = New System.Drawing.Point(371, 117)
+        Me.txtmi.Location = New System.Drawing.Point(391, 117)
         Me.txtmi.Name = "txtmi"
-        Me.txtmi.Size = New System.Drawing.Size(50, 20)
-        Me.txtmi.TabIndex = 3
-        '
-        'txtaddress
-        '
-        Me.txtaddress.Location = New System.Drawing.Point(43, 168)
-        Me.txtaddress.Name = "txtaddress"
-        Me.txtaddress.Size = New System.Drawing.Size(378, 20)
-        Me.txtaddress.TabIndex = 4
+        Me.txtmi.Size = New System.Drawing.Size(29, 20)
+        Me.txtmi.TabIndex = 4
         '
         'lv1
         '
+        Me.lv1.Activation = System.Windows.Forms.ItemActivation.OneClick
+        Me.lv1.FullRowSelect = True
         Me.lv1.HideSelection = False
         Me.lv1.Location = New System.Drawing.Point(42, 256)
         Me.lv1.Name = "lv1"
@@ -128,7 +133,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(368, 101)
+        Me.Label4.Location = New System.Drawing.Point(392, 101)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(22, 13)
         Me.Label4.TabIndex = 10
@@ -178,23 +183,49 @@ Partial Class Form1
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Position:"
         '
-        'lblempno
+        'cmdsave
         '
-        Me.lblempno.AutoSize = True
-        Me.lblempno.Enabled = False
-        Me.lblempno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblempno.Location = New System.Drawing.Point(118, 62)
-        Me.lblempno.Name = "lblempno"
-        Me.lblempno.Size = New System.Drawing.Size(28, 13)
-        Me.lblempno.TabIndex = 16
-        Me.lblempno.Text = "000"
+        Me.cmdsave.Location = New System.Drawing.Point(141, 538)
+        Me.cmdsave.Name = "cmdsave"
+        Me.cmdsave.Size = New System.Drawing.Size(75, 23)
+        Me.cmdsave.TabIndex = 17
+        Me.cmdsave.Text = "ADD NEW"
+        Me.cmdsave.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(222, 538)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 18
+        Me.Button2.Text = "UPDATE"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'btndelete
+        '
+        Me.btndelete.Location = New System.Drawing.Point(413, 538)
+        Me.btndelete.Name = "btndelete"
+        Me.btndelete.Size = New System.Drawing.Size(60, 23)
+        Me.btndelete.TabIndex = 19
+        Me.btndelete.Text = "DELETE"
+        Me.btndelete.UseVisualStyleBackColor = True
+        '
+        'txtaddress
+        '
+        Me.txtaddress.Location = New System.Drawing.Point(42, 168)
+        Me.txtaddress.Name = "txtaddress"
+        Me.txtaddress.Size = New System.Drawing.Size(378, 20)
+        Me.txtaddress.TabIndex = 20
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(485, 555)
-        Me.Controls.Add(Me.lblempno)
+        Me.ClientSize = New System.Drawing.Size(485, 573)
+        Me.Controls.Add(Me.txtaddress)
+        Me.Controls.Add(Me.btndelete)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.cmdsave)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -206,10 +237,10 @@ Partial Class Form1
         Me.Controls.Add(Me.cmbposition)
         Me.Controls.Add(Me.cmbgender)
         Me.Controls.Add(Me.lv1)
-        Me.Controls.Add(Me.txtaddress)
         Me.Controls.Add(Me.txtmi)
         Me.Controls.Add(Me.txtfirstname)
         Me.Controls.Add(Me.txtlastname)
+        Me.Controls.Add(Me.txtempno)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
         Me.Text = "Employee Information"
@@ -222,7 +253,6 @@ Partial Class Form1
     Friend WithEvents txtlastname As TextBox
     Friend WithEvents txtfirstname As TextBox
     Friend WithEvents txtmi As TextBox
-    Friend WithEvents txtaddress As TextBox
     Friend WithEvents lv1 As ListView
     Friend WithEvents cmbgender As ComboBox
     Friend WithEvents cmbposition As ComboBox
@@ -234,5 +264,9 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents lblempno As Label
+    Friend WithEvents cmdsave As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents btndelete As Button
+    Friend WithEvents txtaddress As TextBox
+    Friend WithEvents txtempno As TextBox
 End Class
