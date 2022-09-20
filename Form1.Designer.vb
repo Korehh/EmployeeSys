@@ -39,7 +39,7 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cmdsave = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.updatebtn = New System.Windows.Forms.Button()
         Me.btndelete = New System.Windows.Forms.Button()
         Me.txtaddress = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
@@ -192,14 +192,14 @@ Partial Class Form1
         Me.cmdsave.Text = "ADD NEW"
         Me.cmdsave.UseVisualStyleBackColor = True
         '
-        'Button2
+        'updatebtn
         '
-        Me.Button2.Location = New System.Drawing.Point(222, 538)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "UPDATE"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.updatebtn.Location = New System.Drawing.Point(222, 538)
+        Me.updatebtn.Name = "updatebtn"
+        Me.updatebtn.Size = New System.Drawing.Size(75, 23)
+        Me.updatebtn.TabIndex = 18
+        Me.updatebtn.Text = "UPDATE"
+        Me.updatebtn.UseVisualStyleBackColor = True
         '
         'btndelete
         '
@@ -224,7 +224,7 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(485, 573)
         Me.Controls.Add(Me.txtaddress)
         Me.Controls.Add(Me.btndelete)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.updatebtn)
         Me.Controls.Add(Me.cmdsave)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -265,7 +265,7 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents cmdsave As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents updatebtn As Button
     Friend WithEvents btndelete As Button
     Friend WithEvents txtaddress As TextBox
     Friend WithEvents txtempno As TextBox
