@@ -44,24 +44,45 @@ Public Class Form1
         cn.Close()
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PopListView()
-    End Sub
-
     'ADD
 
     Private Sub cmdsave_Click(sender As Object, e As EventArgs) Handles cmdsave.Click
+        For x As Integer = 0 To lv1.Items.Count - 1
+
+            If txtempno.Text = lv1.Items(x).SubItems(0).Text Then
+                MsgBox("The ID is taken!", vbCritical)
+
+                Return
+
+
+
+            ElseIf txtempno.Text = "" Or txtlastname.Text = "" Or txtfirstname.Text = "" Or txtmi.Text = "" Or txtcontact.Text = "" Or cmbgender.Text = "" Or txtcontact.Text = "" Or cmbposition.Text = "" Then
+                MsgBox("Error!", vbCritical)
+
+                Return
+
+
+            End If
+
+
+        Next
+
         If MsgBox("Are you sure to save this record?", vbQuestion + vbYesNo) = vbYes Then
             openCon()
             sql = "INSERT INTO tbl_empinfo (empno, emplastname, empfirstname, empmidinitial, empaddress, empgender, empcontact, empposition)" _
-            & "VALUES ('" & (Me.txtempno.Text) & "', '" & Me.txtlastname.Text & "', '" & Me.txtfirstname.Text & "', '" & Me.txtmi.Text & "', '" & Me.txtaddress.Text & "', '" & Me.cmbgender.Text & "', '" & Me.txtcontact.Text & "', '" & Me.cmbposition.Text & "')"
+                & "VALUES ('" & (Me.txtempno.Text) & "', '" & Me.txtlastname.Text & "', '" & Me.txtfirstname.Text & "', '" & Me.txtmi.Text & "', '" & Me.txtaddress.Text & "', '" & Me.cmbgender.Text & "', '" & Me.txtcontact.Text & "', '" & Me.cmbposition.Text & "')"
             cmd = New NpgsqlCommand(sql, cn)
             cmd.ExecuteNonQuery()
             cn.Close()
 
 
+
+
         End If
+
         PopListView()
+
+
 
     End Sub
 
